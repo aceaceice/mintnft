@@ -7,7 +7,7 @@ import {
   UPDATE_BALANCES_SUCCESS,
 } from "../action-types";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
-import { calculateFee, GasPrice } from "@cosmjs/stargate";
+import { GasPrice } from "@cosmjs/stargate";
 import { ConstantineInfo } from "../../chain.info.constantine";
 
 export const connectWallet = () => {

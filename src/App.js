@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { connectWallet } from "./redux/action-creators";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import MintingPage from "./components/MintingInterface";
 import Header from "./components/Header";
 import NftList from "./components/NftList";
