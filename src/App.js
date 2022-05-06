@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useDispatch, useSelector } from "react-redux";
+import { connectWallet } from "./redux/action-creators";
+import { useEffect, useRef } from "react";
+import MintingPage from "./components/MintingInterface";
+import Header from "./components/Header";
+import NftList from "./components/NftList";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Landing from "./components/Landing";
+import "./App.css";
 function App() {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  useEffect(() => {
+    dispatch(connectWallet());
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header dispatch={dispatch} state={state} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />}></Route>
+          <Route
+            path="/nftlist"
+            element={<NftList dispatch={dispatch} state={state} />}
+          ></Route>
+          <Route
+            path="/mint"
+            element={<MintingPage dispatch={dispatch} state={state} />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
 export default App;
