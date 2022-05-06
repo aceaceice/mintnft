@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mintnft/static/css/main.56ce7d0b.css",
+    "main.js": "/mintnft/static/js/main.0fb559b1.js",
+    "index.html": "/mintnft/index.html",
+    "main.56ce7d0b.css.map": "/mintnft/static/css/main.56ce7d0b.css.map",
+    "main.0fb559b1.js.map": "/mintnft/static/js/main.0fb559b1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56ce7d0b.css",
+    "static/js/main.0fb559b1.js"
+  ]
+}
